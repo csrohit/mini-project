@@ -1,0 +1,26 @@
+{
+  "name": "mini-project",
+  "version": "1.0.0",
+  "description": "Smart garbage collection system",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csrohit/mini-project.git"
+  },
+  "keywords": [
+    "Partik",
+    "Rohit",
+    "smart",
+    "garbage",
+    "i2it"
+  ],
+  "author": "Rohit Nimkar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/csrohit/mini-project/issues"
+  },
+  "homepage": "https://github.com/csrohit/mini-project#readme"
+}
