@@ -11,7 +11,9 @@ const express = require('express'),
     routes = require('./routes/index'),
     auth = require('./routes/auth'),
     helpers = require('./lib/helpers'),
+    bin = require('./routes/bin'),
     result = require('dotenv').config();
+   // user = require('./routes/handlers/user');
 
 /*  Load .env file */
 if(result.error){
@@ -74,7 +76,9 @@ app.use('/',(req,res,next)=> {
 });
 
 app.use('/',routes);
-    
+//app.use('/user',user),
+app.use('/bin',bin);
+
 app.use(express.static('public'));
 
 app.listen(process.env.PORT,()=>{

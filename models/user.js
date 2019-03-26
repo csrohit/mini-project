@@ -15,11 +15,20 @@ const userSchema = new Schema({
         required:true
     },
     password:{
-        type:String
+        type:String,
+        required:true
     },
     profile:{
         type:Schema.Types.ObjectId,
         required:true
+    },
+    role:{
+        type:Schema.Types.String,
+        enum:['pcmc','user','secretary'],
+        required:true
+    },
+    contact_no:{
+        type:Schema.Types.
     }
 });
 
@@ -40,18 +49,18 @@ module.exports.createUser = (newUser)=>{
     });
 }
 
-module.exports.fetchUserbyUsername = (username, options)=>{
-    return new Promise(async(resolve, reject)=>{
-        try{
-            let query = user.findOne({'username':username}),
-            fields = options && options['select'],
-            populate = options && options['populate'];
-            fields?
-        }catch(e){
-            return reject ("Error fetching user.\n"+e);
-        }
-    });
-};
+// module.exports.fetchUserbyUsername = (username, options)=>{
+//     return new Promise(async(resolve, reject)=>{
+//         try{
+//             let query = user.findOne({'username':username}),
+//             fields = options && options['select'],
+//             populate = options && options['populate'];
+//             fields?
+//         }catch(e){
+//             return reject ("Error fetching user.\n"+e);
+//         }
+//     });
+// };
 
 module.exports.encryptPassword = password=>{
     return new Promise(async (resolve, reject)=>{
