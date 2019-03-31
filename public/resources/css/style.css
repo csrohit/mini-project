@@ -94,7 +94,7 @@ h2:after {
     width: 50%;
     border: 2px solid #e3e3e3;
     background-color: #f83838;
-    height:400px;
+    height:800px;
     margin: 5% auto;
 }
 .bin:hover{
@@ -104,6 +104,7 @@ h2:after {
 .garbage{
     border-radius: 50px 50px 0px 0px;
     width: 100%;
+    max-height: 800px;
     height: 90%;
     background-color:#fff;
 }
