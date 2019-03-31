@@ -14,15 +14,16 @@ async function getStatus(){
             wetStatus = await ajax('GET','/wet','application/json');
             dryBin.style.height = dryStatus;
             // wetBin.style.height = "100px";
-            let style = getComputedStyle(wetBin);
-            console.log(style.height);
-            console.log(wetStatus);
-            wetBin.style.height = 100-wetStatus+"%";
-            if(wetStatus > 90)
+            let style = getComputedStyle(wetBin),
+            dry = getComputedStyle(dryBin);
+            console.log(dryStatus);
+            wetBin.style.height = wetStatus+"%";
+            dryBin.style.height = dryStatus+"%";
+            if(wetStatus < 5)
                 wetBinFull();
-            if(dryStatus > 90)
+            if(dryStatus < 5)
                 dryBinFull();
-        setTimeout(getStatus,500);
+        setTimeout(getStatus,100);
     }catch(e){
         return console.log("error occurred");
     }
